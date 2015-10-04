@@ -115,45 +115,6 @@ You should see the grey stone block change in front of your eyes!
 
 ![](images/mcpi-setblock2.png)
 
-#### Blocks as variables
-
-You can use a variable to store an ID to make the code more readable. The IDs are retrievable through `block`:
-
-```python
-from mcpi import block
-
-dirt = block.DIRT.id
-mc.setBlock(x, y, z, dirt)
-```
-
-Or if you know the ID, you can just set it directly:
-
-```python
-dirt = 3
-mc.setBlock(x, y, z, dirt)
-```
-
-### Special blocks
-
-There are some blocks which have extra properties, such as Wool which has an extra setting you can specify the colour. To set this use the optional fourth parameter in `setBlock`:
-
-```python
-wool = 35
-mc.setBlock(x, y, z, wool, 1)
-```
-
-Here the fourth parameter `1` sets the wool colour to orange. Without the fourth parameter it is set to the default (`0`) which is white. Some more colours are:
-
-```
-2: Magenta
-3: Light Blue
-4: Yellow
-```
-
-Try some more numbers and watch the block change!
-
-Other blocks which have extra properties are wood (`17`): oak, spruce, birch, etc; tall grass (`31`): shrub, grass, fern; torch (`50`): pointing east, west, north, south; and more. See the [API reference](http://www.stuffaboutcode.com/p/minecraft-api-reference.html) for full details.
-
 ### Set multiple blocks
 
 As well as setting a single block with `setBlock` you can fill in a volume of space in one go with `setBlocks`:
