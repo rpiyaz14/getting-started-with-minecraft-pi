@@ -377,4 +377,60 @@ For this program we are going to check using an IF statement if the user is stan
           mc.setBlock(x, y-1, z,stone)
 ```
 You're done! Save and run the program and change to minecraft. An an orange wool block and on the floor and then step on it. BOOM! Instant castle.
-## Building castles
+What if we could link real life with minecraft? What if we could press a button and have the castle built for us? OR press another button and build another castle made out of LAVA? Let's find out!   
+
+## Building castles with the Explorer HAT
+The explorer hat comes with four capacitive touch buttons which work the same way a smartphone's screen does. We are going to assign each button a block, so that every time we press the button a castle made of that block will be built. First go to where we put:
+```python
+ from mcpi import minecraft
+ ```  
+and add:
+```python
+import explorerhat as eh
+pressed=0
+```
+This allows us to use the explorer hat's library, and declares a variable for if a button is being pressed. Next go to our while loop, and add before it a new function:
+
+```python
+def buttonPress(channel, event):
+    block1=1
+    block2=3
+    block3=5
+    block4=20
+    global block
+    global pressed
+    if channel > 4
+        return
+    if event =='press':
+        pressed=1
+        if channel=1:
+            block=block1           
+        if channel=2:
+            block=block2   
+        if channel=3:
+            block=block3
+        if channel=4:
+            block=block4
+```
+This function changes the block type that our castle will be made of, depending on which button has been pressed. The 'channel' variable is the button, and the event is whether it has been pressed or not. The block variables are what block the house will be made from. You can change them to be anything else, but for now we'll leave them as 1, 3, 5 and 20 which will build the castle out of stone, dirt, wood planks or glass.
+The last thing we need to do is change the While loop so it is checking for a button press. First find our
+```python
+  blockBelow=mc.getBlock(x, y-1, z)
+```
+and change it to.
+```python
+    eh.touch.pressed(buttonPress)
+```
+This tells our function from earlier if a button has been pressed, and which one. Next find our IF statement and change it so it reads:
+```python
+  if pressed== 1:
+```
+Now our IF statement checks if a button has been pressed,and it has runs our castle building code. the last thing we need to do is set our pressed variable to 0 otherwise the program will continue to build castles forever. Because we don't need to change the block under us any more find
+```python
+    mc.setBlock(x, y-1, z,stone)
+```
+and change it to
+```python
+  pressed=0
+```
+And we're done! Jump back into minecraft and every time you press one of the explorer HAT's buttons, a castle will appear! 
