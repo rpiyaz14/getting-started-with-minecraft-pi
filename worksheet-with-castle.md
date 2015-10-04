@@ -82,19 +82,6 @@ Now `x`, `y`, and `z` contain each part of your position coordinates. `x` and `z
 
 Note that `getPos()` returns the location of the player at the time, and if you move position you have to call the function again or use the stored location.
 
-### Teleport
-
-As well as finding out your current location you can specify a particular location to teleport to.
-
-```python
-x, y, z = mc.player.getPos()
-mc.player.setPos(x, y+100, z)
-```
-
-This will transport your player to 100 spaces in the air. This will mean you'll teleport to the middle of the sky and fall straight back down to where you started.
-
-Try teleporting to somewhere else!
-
 ### Set block
 
 You can place a single block at a given set of coordinates with `mc.setBlock()`:
