@@ -32,7 +32,7 @@ def walls(x,y,z,block):
     #Back wall
     mc.setBlocks(x+4, y-1, z+26, x-4, y+4, z+26, block)
 def door(x,y,z):
-    mc.setBlocks(x+1, y-1, z+15, x-1, y+2, z+12, 0)
+    mc.setBlocks(x+1, y-1, z+12, x-1, y+2, z+12, 0)
 def floor(x,y,z,block):
     mc.setBlocks(x-9, y-1, z+10, x+9, y-1, z+28, block)
 
@@ -48,13 +48,13 @@ def buttonPress(channel, event):
         return
     if event =='press':
         pressed=1
-        if channel=1:
+        if channel==1:
             block=block1           
-        if channel=2:
+        if channel==2:
             block=block2   
-        if channel=3:
+        if channel==3:
             block=block3
-        if channel=4:
+        if channel==4:
             block=block4
 pressed=0
 while True:

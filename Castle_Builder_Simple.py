@@ -24,13 +24,14 @@ def towers(x,y,z,block):
 def walls(x,y,z,block):
     #Front wall
     mc.setBlocks(x+4, y-1, z+12, x-4, y+4, z+12, block)
-    mc.setBlocks(x+1, y-1, z+15, x-1, y+2, z+12, 0)
     #Left wall
     mc.setBlocks(x+7, y-1, z+15, x+7, y+4, z+23, block)
     #Right wall
     mc.setBlocks(x-7, y-1, z+15, x-7, y+4, z+23, block)
     #Back wall
     mc.setBlocks(x+4, y-1, z+26, x-4, y+4, z+26, block)
+def door(x,y,z):
+    mc.setBlocks(x+1, y-1, z+12, x-1, y+2, z+12, 0)
 def floor(x,y,z,block):
     mc.setBlocks(x-9, y-1, z+10, x+9, y-1, z+28, block)
 while True:
@@ -41,4 +42,5 @@ while True:
         towers(x,y,z,stone)
         walls(x,y,z,stone)
         floor(x,y,z,stone)
+        door(x,y,z)
         mc.setBlock(x, y-1, z,stone)
