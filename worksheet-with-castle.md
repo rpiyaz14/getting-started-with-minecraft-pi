@@ -61,7 +61,7 @@ def walls(x,y,z,block):
 Almost there! now we need to add the most important features of the castle: a floor to stand on and a door so we can actually get into the castle.
 ```python
 def door(x,y,z):
-    mc.setBlocks(x+1, y-1, z+12, x-1, y+2, z+12, 0)
+    mc.setBlocks(x+1, y, z+12, x-1, y+2, z+12, 0)
 def floor(x,y,z,block):
     mc.setBlocks(x-9, y-1, z+10, x+9, y-1, z+28, block)
 ```
@@ -108,7 +108,7 @@ def buttonPress(channel, event):
     block4=20
     global block
     global pressed
-    if channel > 4
+    if channel > 4:
         return
     if event =='press':
         pressed=1

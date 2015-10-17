@@ -32,7 +32,7 @@ def walls(x,y,z,block):
     #Back wall
     mc.setBlocks(x+4, y-1, z+26, x-4, y+4, z+26, block)
 def door(x,y,z):
-    mc.setBlocks(x+1, y-1, z+12, x-1, y+2, z+12, 0)
+    mc.setBlocks(x+1, y, z+12, x-1, y+2, z+12, 0)
 def floor(x,y,z,block):
     mc.setBlocks(x-9, y-1, z+10, x+9, y-1, z+28, block)
 
@@ -44,7 +44,7 @@ def buttonPress(channel, event):
     block4=20
     global block
     global pressed
-    if channel > 4
+    if channel > 4:
         return
     if event =='press':
         pressed=1
@@ -63,8 +63,8 @@ while True:
     eh.touch.pressed(buttonPress)
     if pressed== 1:
         clearSpace(x,y,z)
-        towers(x,y,z,stone)
-        walls(x,y,z,stone)
-        floor(x,y,z,stone)
+        towers(x,y,z,block)
+        walls(x,y,z,block)
+        floor(x,y,z,block)
         door(x,y,z)
         pressed=0
