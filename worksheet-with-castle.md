@@ -23,12 +23,13 @@ Because we want to build a castle EVERY time we place a wool block, we need to u
 >def functionName(variable1,variable2):
     doSomethingWith(Variable2)
 
-We can "pass" the function a variable each time we use it. To build the castle we will give our functions the players position so it can always know where they are.Functions are all about splitting code up, so we will start with creating a function for the towers.
-
+We can "pass" the function a variable each time we use it. To build the castle we will give our functions the players position so it can always know where they are.Functions are all about splitting code up, so we will start with creating a function to make some space for our castle
 ```python
-def towers(x,y,z,block):
+def clear space(x,y,z):
+    mc.setBlocks(x+9,y-2,z+5,x-9,y+10,z+30,0)
 ```
-The x,y,z variables are the player's position (`x` and `z` are the walking directions (forward/back and left/right) and `y` is up/down.) and the block is which block the castle will be made of -this means that later we can make the castle out of any block (even lava!). next we need to write the code to make the towers closest to us.
+
+The x,y,z variables are the player's position (`x` and `z` are the walking directions (forward/back and left/right) and `y` is up/down.).the final number in the mc.setblocks is what block we are using,in this case air.Next we need to create another function and  write the code to make the towers closest to us.
 ```python
 def towers(x,y,z,block):
     mc.setBlocks(x+5, y-1, z+10, x+9, y+8, z+14, block)
@@ -37,7 +38,7 @@ def towers(x,y,z,block):
     mc.setBlocks(x-5, y-1, z+10, x-9, y+8, z+14, block)
     mc.setBlocks(x-6, y-1, z+11, x-8, y+8, z+13, 0)
 ```
-Each tower is made by making one large cuboid of stone using mc.setBlocks() (which fills a volume with a given block), and then making a smaller cuboid of air inside using the same. The Last two towers are very similar, instead this time we need to move them further away from the player by increasing their z coordinates.
+The 'block' varible is like the zero from before,but now we can change it to any block (even lava!).Each tower is made by making one large cuboid of stone using mc.setBlocks() (which fills a volume with a given block), and then making a smaller cuboid of air inside using the same. The Last two towers are very similar, instead this time we need to move them further away from the player by increasing their z coordinates.
 ```python
     mc.setBlocks(x+5, y-1, z+24, x+9, y+8, z+28, block)
     mc.setBlocks(x+6, y-1, z+25, x+8, y+8, z+27, 0)
@@ -81,7 +82,7 @@ For this program we are going to check using an IF statement if the user is stan
           walls(x,y,z,block)
           floor(x,y,z,block)
           door(x,y,z)
-          mc.setBlock(x, y-1, z,stone)
+          mc.setBlock(x, y-1, z,block)
 ```
 You're done! Save and run the program and change to minecraft. An an orange wool block and on the floor and then step on it. BOOM! Instant castle.
 What if we could link real life with minecraft? What if we could press a button and have the castle built for us? OR press another button and build another castle made out of LAVA? Let's find out!   
