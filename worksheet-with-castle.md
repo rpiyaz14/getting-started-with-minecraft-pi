@@ -10,7 +10,17 @@ Minecraft is a popular sandbox open-world building game. A free version of Minec
 ![After](images/after.png)
 Now is time to start building something! We could build a house, but that's a bit boring. What if we build an entire castle every time you place a wool block?
 
-Start by opening up a new window (`File > New window` and `File > Save`) and save it as Castle-builder.py. Then type the following in the python window:
+
+To run Minecraft Pi, open it from the desktop menu or type `minecraft-pi` in the terminal.
+
+![](images/menu.png)
+
+When Minecraft Pi has loaded, click on **Start Game**, followed by **Create new**. You'll notice that the containing window is offset slightly. This means to drag the window around you have to grab the title bar behind the Minecraft window.
+
+![](images/mcpi-game.png)
+
+Bring your focus away from the game by pressing the `Tab` key, which will free your mouse. Open Python 3 from the application menu and move the windows so they're side-by-side
+.Start by opening up a new window (`File > New window` and `File > Save`) and save it as Castle-builder.py. Then type the following in the python window:
 ```python
 from mcpi.minecraft import Minecraft
 
